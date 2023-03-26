@@ -16,6 +16,7 @@ const CovidMap:React.FC = () => {
       Leaflet.Icon.Default.mergeOptions({
         iconSize: [16, 16],
         shadowSize: [16, 16],
+        iconRetinaUrl: "~/assets/icons/marker-icon-2x.png",
         iconUrl: "~/assets/icons/marker-shadown.png",
         shadowUrl: "~/assets/icons/marker-icon.png"
       });
