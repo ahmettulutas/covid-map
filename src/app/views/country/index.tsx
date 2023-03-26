@@ -15,7 +15,7 @@ const CountryDetailPage:React.FC = () => {
   const tableHeadings = filteredCountry && Object.entries(filteredCountry).map(([key, values], index) => {
     if (typeof values !== "object")
       return (
-        <th key={index} className="border border-gray-300 px-4 py-2 font-medium">{`${t(`lbl.${key}`)}`}</th>
+        <th key={index} className="border border-gray-300 px-4 py-2 font-medium text-sm">{`${t(`lbl.${key}`)}`}</th>
       );
   });
 
@@ -23,7 +23,7 @@ const CountryDetailPage:React.FC = () => {
     if (typeof value !== "object")
       return (
         <td key={index}
-          className={`${value < 0 ? "text-green-400" : value > 0 ? "text-red-400" : ""} border border-gray-300 px-4 py-2 text-center`}>
+          className="border border-gray-300 px-4 py-2 text-center">
           {value.toLocaleString("en-US")}
         </td>
       );
@@ -32,13 +32,13 @@ const CountryDetailPage:React.FC = () => {
   return (
     <Layout>
       <div className="container">
-        <div className="flex gap-2 justify-center items-center">
+        <div className="flex gap-2 justify-center items-center my-4">
           <h1 className="text-2xl">{filteredCountry?.country}</h1>
-          <img className="w-10 h-auto" src={filteredCountry?.countryInfo.flag} />
+          <img className="w-10 h-auto shadow-xl shadow-gray-400" src={filteredCountry?.countryInfo.flag} />
         </div>
         <section className="grid gap-4 grid-cols-1 w-full overflow-x-hidden">
           <StatsContainer data={filteredCountry} />
-          <div className="overflow-x-auto">
+          <div className="overflow-x-auto custom-scrollbar">
             <table className="table-auto w-full lg:w-[30%] m-auto my-4">
               <tbody>
                 <tr>{tableHeadings}</tr>

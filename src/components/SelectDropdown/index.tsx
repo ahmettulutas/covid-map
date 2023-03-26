@@ -8,7 +8,7 @@ const DropdownSearch:React.FC = () => {
   return (
     <div className="px-2">
       <SearchBar />
-      <section className={`${!filteredData ? "animate-pulse bg-gray-200" : ""} h-60 overflow-y-scroll`}>
+      <section className={`${!filteredData ? "animate-pulse bg-gray-200" : ""} h-60 overflow-y-scroll custom-scrollbar`}>
         <ul>
           {filteredData?.map(item => (
             <div key={item.countryInfo._id} className="flex justify-between p-2 even:bg-gray-100 dark:even:bg-transparent">

@@ -17,8 +17,12 @@ const StatBox:React.FC<TStatBox> = ({ title, todayCases, total, type }) => {
   return (
     <div className={`shadow-sm rounded-md p-4 ${coloring[type].border} border-4`}>
       <h2>{title}</h2>
-      <p className={`${coloring[type].text} text-xl`}>{total?.toLocaleString("en-US")}</p>
-      <p>{`+ ${todayCases?.toLocaleString("en-US")}`}</p>
+      <p className={`${!total ? "animate-pulse bg-gray-200 h-3" : ""} ${coloring[type].text} text-xl`}>{total?.toLocaleString("en-US")}</p>
+      {todayCases === undefined ?
+        <p className="animate-pulse bg-gray-200 h-3 mt-2"></p>
+        :
+        <p>{`+ ${todayCases?.toLocaleString("en-US")}`}</p>
+      }
     </div>
   );
 };

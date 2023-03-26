@@ -1,5 +1,5 @@
 export default {
-  about: "Hakkımızda",
+  about: "Hakkında",
   goBack: "Geri Dön",
   search: "Ara",
   social: "Sosyal",
@@ -7,5 +7,24 @@ export default {
   viewDetails: "Detayları İncele",
   cases: "Vaka Sayısı",
   deaths: "Ölüm Sayısı",
-  recovered: "İyileşen Sayısı"
+  recovered: "İyileşen",
+  updated: "Güncellenen",
+  country: "Ülke",
+  todayCases: "Bugünkü Vaka Sayısı",
+  todayDeaths: "Bugünkü Ölüm Sayısı",
+  todayRecovered: "Bugünkü İyileşen Sayısı",
+  active: "Aktif",
+  critical: "Kritik",
+  casesPerOneMillion: "Bir Milyonda Vaka Sayısı",
+  deathsPerOneMillion: "Bir Milyonda Ölüm Sayısı",
+  tests: "Testler",
+  testsPerOneMillion: "Bir Milyonda Test Sayısı",
+  population: "Nüfus",
+  continent: "Kıta",
+  oneCasePerPeople: "Bir Kişide Vaka Sayısı",
+  oneDeathPerPeople: "Bir Kişide Ölüm Sayısı",
+  oneTestPerPeople: "Bir Kişide Test Sayısı",
+  activePerOneMillion: "Bir Milyonda Aktif Vaka Sayısı",
+  recoveredPerOneMillion: "Bir Milyonda İyileşen Sayısı",
+  criticalPerOneMillion: "Bir Milyonda Kritik Vaka Sayısı"
 } as const;
