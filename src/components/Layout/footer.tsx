@@ -1,6 +1,6 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
-
+import { FaGithub } from "react-icons/fa";
 const Footer:React.FC = () => {
   const { t } = useTranslation();
 
@@ -18,6 +18,9 @@ const Footer:React.FC = () => {
           </div>
           <div className="flex w-full lg:w-1/2 lg:justify-end lg:text-right">
             <div className="px-3 md:px-0">
+              <a href="https://github.com/ahmettulutas/covid-map" target="_blank">
+              <FaGithub />
+              </a>
             </div>
           </div>
         </div>

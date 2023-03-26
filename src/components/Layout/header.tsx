@@ -19,7 +19,6 @@ const Header:React.FC = () => {
         <div className={`${open ? "block" : "hidden"} md:flex md:items-center md:w-auto w-full order-3 md:order-1`} id="menu">
           <ul className="md:flex items-center justify-between text-base pt-4 md:pt-0">
             <li><Link className="inline-block no-underline hover:text-black dark:hover:text-white hover:underline py-2 pr-4" to="/">{t("lbl.stats")}</Link></li>
-            <li><Link className="inline-block no-underline hover:text-black dark:hover:text-white hover:underline py-2 pr-4" to="#">{t("lbl.about")}</Link></li>
           </ul>
         </div>
 

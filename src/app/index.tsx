@@ -5,7 +5,7 @@ import { fetchCountriesDataStart, fetchStatsStart } from "~/store/api/redux/covi
 import { useAppDispatch } from "~/utils/hooks";
 import NotFound from "./views/404";
 
-const WorldMap = React.lazy(() => import("./views/home-page"));
+const HomePage = React.lazy(() => import("./views/home-page"));
 const CountryDetailPage = React.lazy(() => import("./views/country"));
 
 const App = () => {
@@ -18,7 +18,7 @@ const App = () => {
 
   return (
     <Routes>
-      <Route path="/" element={<React.Suspense fallback={<LoadingSpinner />}><WorldMap /></React.Suspense>}></Route>
+      <Route path="/" element={<React.Suspense fallback={<LoadingSpinner />}><HomePage /></React.Suspense>}></Route>
       <Route path="/country/:id" element={<React.Suspense fallback={<LoadingSpinner />}><CountryDetailPage /></React.Suspense>}></Route>
       <Route path='*' element={<NotFound />} />
     </Routes>

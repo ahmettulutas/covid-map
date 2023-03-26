@@ -1,8 +1,8 @@
 export const
   enums = {
     status: {
-      success: "SUCCESS",
-      error: "Error"
+      success: "success",
+      error: "danger"
     },
     langs: {
       tr: "tr",
