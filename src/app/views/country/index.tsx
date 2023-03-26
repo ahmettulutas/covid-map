@@ -5,7 +5,7 @@ import Layout from "~/components/Layout";
 import { StatsContainer } from "~/components/UIComponents";
 import { useAppSelector } from "~/utils/hooks";
 
-const CountryDetailPage = () => {
+const CountryDetailPage:React.FC = () => {
 
   const { id } = useParams();
   const { t } = useTranslation();
@@ -36,7 +36,7 @@ const CountryDetailPage = () => {
           <h1 className="text-2xl">{filteredCountry?.country}</h1>
           <img className="w-10 h-auto" src={filteredCountry?.countryInfo.flag} />
         </div>
-        <section className="grid gap-4 grid-cols-1 w-full overflow-x-hidden my-4">
+        <section className="grid gap-4 grid-cols-1 w-full overflow-x-hidden">
           <StatsContainer data={filteredCountry} />
           <div className="overflow-x-auto">
             <table className="table-auto w-full lg:w-[30%] m-auto my-4">

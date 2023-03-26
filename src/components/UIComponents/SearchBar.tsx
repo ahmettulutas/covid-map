@@ -22,8 +22,8 @@ const SearchBar:React.FC = () => {
   }, [debouncedValue]);
 
   return (
-    <div className="relative my-8 container">
-      <div className="absolute inset-y-0 left-4 flex items-center pl-3 pointer-events-none">
+    <div className="relative mb-4">
+      <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
         <SearchIcon />
       </div>
       <input
@@ -35,7 +35,7 @@ const SearchBar:React.FC = () => {
       />
       <button
         onClick={() => setSearchInput("")} // resets the searchQuery
-        className="hover:text-black dark:hover:text-white absolute inset-y-0 right-4 flex items-center pr-3 cursor-pointer">
+        className="hover:text-black dark:hover:text-white absolute inset-y-0 right-0 flex items-center pr-3 cursor-pointer">
         <Cross className="w-6 h-6"/>
       </button>
     </div>

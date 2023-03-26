@@ -1,7 +1,7 @@
+import { AxiosError, AxiosResponse } from 'axios';
 type HTTPMethod = "get" | "post" | "put" | "delete";
 
-export type ErrorType = {
-  code?: string
-  message?: string
-  data?: null
+
+type ApiError<T = unknown> = AxiosError & {
+  response?: AxiosResponse<T>
 }

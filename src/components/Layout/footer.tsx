@@ -18,8 +18,8 @@ const Footer:React.FC = () => {
           </div>
           <div className="flex w-full lg:w-1/2 lg:justify-end lg:text-right">
             <div className="px-3 md:px-0">
-              <a href="https://github.com/ahmettulutas/covid-map" target="_blank">
-              <FaGithub />
+              <a href="https://github.com/ahmettulutas/covid-map" target="_blank" rel="noreferrer">
+                <FaGithub />
               </a>
             </div>
           </div>

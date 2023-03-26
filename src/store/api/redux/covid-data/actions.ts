@@ -2,7 +2,7 @@
 import { AxiosResponse } from "axios";
 import { call, put, takeLatest } from "redux-saga/effects";
 import requests from "../../axiosservice/requests";
-import { ErrorType } from "../../types";
+import { ApiError } from "../../types";
 import { fetchCountriesDataStart,
   fetchCountriesDataSuccess,
   fetchCountriesDataError,
@@ -16,7 +16,7 @@ function* fetchCountriesData() {
     yield put(fetchCountriesDataSuccess(response.data as CountriesData[]));
   }
   catch (error: any) {
-    yield put(fetchCountriesDataError(error as ErrorType));
+    yield put(fetchCountriesDataError(error as ApiError));
   }
 }
 
@@ -26,7 +26,7 @@ function* fetchStats() {
     yield put(fetchStatsSuccess(response.data as Stats));
   }
   catch (error: any) {
-    yield put(fetchStatsError(error as ErrorType));
+    yield put(fetchStatsError(error as ApiError));
   }
 }
 
