@@ -1,27 +1,24 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
 import { useAppSelector } from "~/utils/hooks";
 import { Link } from "react-router-dom";
-import Leaflet from "leaflet";
+import { Icon } from "leaflet";
 import { useTranslation } from "react-i18next";
 import SearchIcon from "~/assets/icons/search.svg";
+import marker from "../../assets/icons/marker-icon.png";
+
+
+const myIcon = new Icon({
+  iconUrl: marker,
+  iconSize: [16, 16],
+  shadowSize: [16, 16]
+});
 
 const CovidMap:React.FC = () => {
   const covidData = useAppSelector(state => state.coronaData.countries);
   const { t } = useTranslation();
 
-  useEffect(() => {
-    (async function init() {
-      Leaflet.Icon.Default.mergeOptions({
-        iconSize: [16, 16],
-        shadowSize: [16, 16],
-        iconRetinaUrl: "~/assets/icons/marker-icon-2x.png",
-        iconUrl: "~/assets/icons/marker-shadown.png",
-        shadowUrl: "~/assets/icons/marker-icon.png"
-      });
-    })();
-  }, []);
 
   return (
     <MapContainer
@@ -34,6 +31,7 @@ const CovidMap:React.FC = () => {
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"/>
       {covidData?.map(country => (
         <Marker
+          icon={myIcon}
           key={country.countryInfo._id}
           position={[country.countryInfo.lat, country.countryInfo.long]}
         >
@@ -46,7 +44,9 @@ const CovidMap:React.FC = () => {
               {t("lbl.viewDetails")}
               <SearchIcon className="w-4 h-4"/>
             </Link>
+            <img src="/marker-icon-2x.png" />
           </Popup>
+
         </Marker>
       ))}
     </MapContainer>
