@@ -44,7 +44,6 @@ const CovidMap:React.FC = () => {
               {t("lbl.viewDetails")}
               <SearchIcon className="w-4 h-4"/>
             </Link>
-            <img src="/marker-icon-2x.png" />
           </Popup>
 
         </Marker>
