@@ -1,5 +1,5 @@
-import React from "react";
-import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
+import React, { useEffect } from "react";
+import { MapContainer, TileLayer, Marker, Popup, useMap } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
 import { useAppSelector } from "~/utils/hooks";
 import { Link } from "react-router-dom";
@@ -15,10 +15,16 @@ const myIcon = new Icon({
   shadowSize: [16, 16]
 });
 
+const ZoomControl:React.FC<{coords:[number, number]}> = ({ coords }) => {
+  const map = useMap();
+  map.setView(coords, 5);
+  return null;
+};
+
 const CovidMap:React.FC = () => {
   const covidData = useAppSelector(state => state.coronaData.countries);
   const { t } = useTranslation();
-
+  const selectedCountry = useAppSelector(state => state.common.selectedCountry);
 
   return (
     <MapContainer
@@ -45,7 +51,7 @@ const CovidMap:React.FC = () => {
               <SearchIcon className="w-4 h-4"/>
             </Link>
           </Popup>
-
+          <ZoomControl coords={[(selectedCountry?.countryInfo.lat || 35), (selectedCountry?.countryInfo.long || 50)]}/>
         </Marker>
       ))}
     </MapContainer>

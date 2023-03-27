@@ -7,6 +7,9 @@ const actions = {
   },
   setSearchQuery: (state:CommonReducers, action:PayloadAction<string>) => {
     state.searchQuery = action.payload;
+  },
+  setSelectedCountry: (state:CommonReducers, action:PayloadAction<CountriesData>) => {
+    state.selectedCountry = action.payload;
   }
 };
 

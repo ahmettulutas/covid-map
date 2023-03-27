@@ -5,7 +5,8 @@ import { CommonReducers } from "./types";
 const initialState: CommonReducers = {
   isDarkTheme: false,
   lang: "tr",
-  searchQuery: ""
+  searchQuery: "",
+  selectedCountry: null
 };
 
 const commonSlice = createSlice({
@@ -14,5 +15,5 @@ const commonSlice = createSlice({
   reducers: { ...actions }
 });
 
-export const { toggleTheme, setSearchQuery } = commonSlice.actions;
+export const { toggleTheme, setSearchQuery, setSelectedCountry } = commonSlice.actions;
 export default commonSlice.reducer;
