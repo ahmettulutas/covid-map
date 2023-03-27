@@ -1,11 +1,12 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { AxiosError } from "axios";
 import { ApiError } from "../../types";
 
 type CoronaDataState = {
   countries: CountriesData[] | null,
   stats: Stats | null
   loading: boolean,
-  error: ApiError | null;
+  error:AxiosError<ApiError> | ApiError | null;
 }
 
 const initialState: CoronaDataState = {
@@ -27,7 +28,7 @@ const coronaDataSlice = createSlice({
       state.countries = action.payload;
       state.loading = false;
     },
-    fetchCountriesDataError(state, action: PayloadAction<ApiError>) {
+    fetchCountriesDataError(state, action) {
       state.loading = false;
       state.error = action.payload;
     },
@@ -39,7 +40,7 @@ const coronaDataSlice = createSlice({
       state.stats = action.payload;
       state.loading = false;
     },
-    fetchStatsError(state, action: PayloadAction<ApiError>) {
+    fetchStatsError(state, action) {
       state.loading = false;
       state.error = action.payload;
     }
