@@ -15,7 +15,7 @@ const CountryDetailPage:React.FC = () => {
   const tableHeadings = filteredCountry && Object.entries(filteredCountry).map(([key, values], index) => {
     if (typeof values !== "object")
       return (
-        <th key={index} className="border border-gray-300 px-4 py-2 font-medium text-sm">{`${t(`lbl.${key}`)}`}</th>
+        <th key={index} className="border border-gray-300 px-4 py-2 font-bold text-sm">{`${t(`lbl.${key}`)}`}</th>
       );
   });
 

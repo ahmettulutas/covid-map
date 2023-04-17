@@ -8,7 +8,7 @@ const DropdownSearch:React.FC = () => {
   const filteredData = useAppSelector(selectFilteredCountries);
   const dispatch = useAppDispatch();
   return (
-    <div className="px-2">
+    <div className="px-2 mx-auto md:mx-0">
       <SearchBar />
       <section className={`${!filteredData ? "animate-pulse bg-gray-200" : ""} h-60 overflow-y-scroll custom-scrollbar`}>
         <ul>
